@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="restApp">
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+  <link href="app.less" type="text/css" rel="stylesheet/less">
+</head>
+<body>
+
+  <!-- Livereload script for development only (stripped during dist build) -->
+  <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+
+  <!-- JS from Bower Components -->
+  <script src="bower_components/less.js/dist/less-1.6.2.js" data-concat="false"></script>
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+<!--
+
+  <script src="bower_components/plupload/js/moxie.min.js"></script> -->
+  <script src="bower_components/plupload/js/plupload.full.min.js"></script>
+
+  <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+  <script src="bower_components/angular-dragdrop/src/angular-dragdrop.min.js"></script>
+  <!-- Add New Bower Component JS Above -->
+
+
+  <!-- Main App JS -->
+  <script src="app.js"></script>
+  <script src="partial/my-partial/my-partial.js"></script>
+  <script src="partial/simpleRest/simpleRest.js"></script>
+  <script src="service/restService.js"></script>
+  <script src="constant/constant.js"></script>
+  <script src="partial/plupload/plupload.js"></script>
+  <script src="partial/fileManager/fileManager.js"></script>
+  <script src="service/upload-manager.js"></script>
+  <script src="partial/angular/angular.js"></script>
+  <script src="directive/uploadBox/uploadBox.js"></script>
+  <script src="directive/simple-directive/simple-directive.js"></script>
+  <!-- Add New Component JS Above -->
+
+  <div>
+    <div id="content" class="container">
+        <div class="navbar navbar-default">
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav large">
+                <li ng-class="{'active':currentPage.page=='simpleResr'}"><a ui-sref="simpleRest">Rest</a></li>
+                <li ng-class="{'active':currentPage.page=='plupload'}"><a ui-sref="plupload">Plupload</a></li>
+                <li ng-class="{'active':currentPage.page=='fileManager'}"><a ui-sref="fileManager">FileManager</a></li>
+                <li ng-class="{'active':currentPage.page=='angular'}"><a ui-sref="angular">Angular</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+      <div class="row">
+        <div ui-view>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div id="button-test"></div>
+</body>
+</html>

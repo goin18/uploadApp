@@ -1,0 +1,23 @@
+<div class="col-md-12">
+    <span data-drag="true" jqyoui-draggable>So you think you can drag</span>
+    <div class="btn btn-primary" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" jqyoui-draggable="{animate:true}" ng-hide="!list1.title">{{list1.title}}</div> <br />
+    <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable style='height:100px;'>
+        <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
+    </div>
+   <!-- <div class="btn btn-success" ng-click="startPlupload()">Start Upload</div>  -->
+
+
+
+    <div upload-box="fileOptions" table-files = 'tableFiles'></div>
+
+    <div>File Upload:</div>
+    <div ng-repeat="file in files ">
+        <div class="btn" ng-click="removeFromUploading($index)">X</div>
+        <div>{{ file.name }}</div>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow= aria-valuemin="0" aria-valuemax="100" style="width:{{file.percent}}%;">
+            {{ progress }}%
+            </div>
+        </div>
+    </div>
+</div>

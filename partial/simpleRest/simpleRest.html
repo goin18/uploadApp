@@ -1,0 +1,20 @@
+<div class="col-md-12">
+    <h3>Rest funkcije</h3>
+    <div class="btn btn-info" ng-click="newShow ? [newShow = false, newText = '+'] :[newShow = true, newText = '-']">{{ newText }}</div>
+    <div ng-show="newShow" style="display: flex">
+        <input placeholder="Name" type="text" class="form-control" ng-model="newName" style="width: 80%;">
+        <div class="btn btn-info" ng-click="newUser()">Create new</div>
+    </div>
+    <br />
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="user in users">
+            <div  >NAME: {{user.name}}, ID: {{user._id}}</div>
+            <div class="btn btn-danger" ng-click="deleteUser(user._id)">Delete</div>
+            <div class="btn btn-success" ng-click="putShow ? [putText = 'Down', putShow = false] : [putText = 'Up', putShow = true]">{{ putText }}</div>
+            <div class="row" ng-show="putShow" style="display: flex">
+                    <input type="text" class="form-control" ng-model="user.name" style="width: 80%; margin: auto">
+                    <div class="btn btn-success pull-right" style="margin: auto" ng-click="putMetoda(user._id, user.name)">Put</div>
+            </div>
+        </li>
+    </ul>
+</div>
